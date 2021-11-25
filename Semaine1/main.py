@@ -26,27 +26,18 @@ def traduction(text):
 if __name__ == '__main__':
     alphabet1 = 'jfxsyzniItvAaqurwheklmgdcFXUWNSY'
     alphabet2 = 'easntuidDoqVvlpmrczfghbyxASPRINT'
-    #print(text.translate(text.maketrans(alphabet1, alphabet2)))
-    # for i in range(len(alphabet1)):
-    #    print(str(ord(alphabet1[i]) - ord(alphabet2[i]))+' '+alphabet1[i]+' : '+alphabet2[i])
     print(traduction(text))
 
-
-
-    reader = open("message2.txt", "r")
+    reader = open("extractPDF.txt", "r")
     writer = open("correction.txt", "w+b",)
     txt = reader.readlines()
     texteComplet=""
     for line in txt:
-        texteComplet+=line[:-2]
-#    pdfText = "OAGJWn0cQoZPOhTpb7eIyxTkHoNlRHGaDrtPUIbaYLAzE3WtNIRlRHGXQ0EugMWqhn9LgLK0EZWq"
+        texteComplet+=line
     pdfText=traduction(texteComplet)
 
     base64_bytes = pdfText.encode()
-    print(base64_bytes[:20])
     message_bytes = base64.b64decode(base64_bytes + b'==')
-    #message = message_bytes.decode('ascii')
-    print(message_bytes)
     writer.write(message_bytes)
     reader.close()
     writer.close()
