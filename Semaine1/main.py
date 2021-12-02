@@ -29,7 +29,7 @@ if __name__ == '__main__':
     print(traduction(text))
 
     reader = open("extractPDF.txt", "r")
-    writer = open("correction.txt", "w+b",)
+    writer = open("correction.pdf", "w+b",)
     txt = reader.readlines()
     texteComplet=""
     for line in txt:
