@@ -1,0 +1,19 @@
+Voici la discussion que nous avons interceptée. Chaque individu a utilisé AES-CTR pour
+chiffrer ses communications. Nous avons ici la version hexadécimale des communications chiffrées !
+Tout ce qu'on a entendu dire, c'était que la communication commençait par la phrase suivante : 
+Bonjour M. Chapelle et Y. Boichut, on doit préparer le sprint ! Vous êtes dispos ?
+Ce qu'on sait aussi, c'est que Y. Boichut et M. Chapelle sont des personnes polies
+On sait aussi que dans le premier message de l'un il y a le mot 'Présent'
+On sait aussi que dans le premier message de l'autre il y a le mot 'Opérationnel'
+N. Ollinger dit : f117fde4578c6292cf872add7461e3aa4729a0b319b8d8cb4c078140bb2331bcb85f0f4b2ba6fd247ee9ac33f65e93fd0df3d7db86eb5898b9031335dc07e4f2c2aa65236748c20f98b371721f4bd6f28a7dd6bf7a7cb114b001b554
+Y. Boichut dit : 4a642baea84f5ebe8c89097c3335e17994008e37ebe5b5565f4b385235927bbbd87943466a98
+M. Chapelle dit : 00d23f31a0854ca7c506758f7135af77207354f6d6ae8c813d3ff547918e8aa89610d1772645a72678a444
+N. Ollinger dit : f117fde4578c6292d4c664f5747df2e27f73acd001bcddd6001f9140b3323181f911234130e5f13479e5e133ec0dd7f601a787ca875b94c8a81e0335dc2ac4819c9955092903
+Y. Boichut dit : 4a642baea84f5ebe85a7252c7c26f23ab342cb33c6cbac574d5c0b3747
+Y. Boichut dit : 4a642baea84f5ebe85a4262c7c30f22abe5bdc33c5c8ac574d5c0b3747
+N. Ollinger dit : f117fde4578c6292c2a36897563ab1c96266f0951db5cd8200078540b394bb88f35f2e4c2db6f0717aaaf92eb836bad327aabaefc1
+M. Chapelle dit : 00d23f31a0854ca7cc2859df3e25bc24177019ddcaefada21b19ca2385
+M. Chapelle dit : 00d23f31a0854ca7cc2b5adf3e2db927432d1bccc8efada21b19ca2385
+N. Ollinger dit : f117fde4578c6292c28368977871b1f96f75ef9e05f9c4cb534b9201b2326497e55f25413aa4b52165b0fe7cf41bd7e611e999ce98089486ac0313678e0aa1b7c5fa6528
+N. Ollinger dit : f117fde4578c6292c9892ac43b78b6e36766e7955df9c7c000088503b6323189f35f3d4723b5b53363b1ac2cf90cd7f00df3d7cf954682c8b4145625951fa1b6d4fa67256058910ede847765000e353c9b38c9fe
+N. Ollinger dit : f117fde4578c6292ee8729c77467f0e47e62a0921dbcddcb000f8140bd3f7094e31a6d542bbdf03d2ae4ac12f70c9af308e29ace9a5cddc8b9071324dc1ce8a0d4a97c2b7b57ce0ed1896d271f0a633d906c85f97f7cb001
