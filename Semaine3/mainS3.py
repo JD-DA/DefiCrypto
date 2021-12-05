@@ -1,7 +1,7 @@
 import struct
 from Crypto.Util.strxor import strxor
 from PIL import Image
-from numpy import *
+import numpy as np
 
 
 def tableToBytes(table):
@@ -18,14 +18,25 @@ def splitIV(table, position):
 
 if __name__ == "__main__":
     img = Image.open('image-defi.png')
-    numpydata = asarray(img)
+    numpydata = np.asarray(img)
     (i,j,alpha) = numpydata.shape
     print(i,j)
     print(i*j)
-    for i in [1,2,0]:
-        imageRed = numpydata[:, :, i]
-        Image.fromarray(imageRed).save(f"./image{i}.png")
-    imageRed=imageRed.reshape(-1)
+    '''for component in [1,2,0]:
+        imageRed = numpydata[:, :, component]
+        Image.fromarray(imageRed).save(f"./image{component}.png")'''
+    imageRed = numpydata[:, :, 0]
+    imageRed[0,1]=254
+    print("Avant")
+    print(imageRed)
+    print(imageRed.shape)
+# on inverse l'image sur la diagonale pour pouvoir lire les colonnes une par une au lieu des lignes une par une
+    imageRed = np.reshape(imageRed,(1500, 1154), order='F')
+    print("apres")
+    print(imageRed)
+    print(imageRed.shape)
+    imageRed = imageRed.reshape(-1)
+    print("ligne")
     print(imageRed)
     print(imageRed.shape)
 
@@ -35,14 +46,37 @@ if __name__ == "__main__":
     masque = bytes(imageRed)
     print(masque[:20])
     print(message[:20])
-    print(len(message),len(masque))
-    res = strxor(message,masque[:len(message)])
-    print(res.decode())
+    size = len(message)
+    print(size,len(masque))
+    res = strxor(message, masque[:size])
+    #print(res.decode())
     print(res)
-    res = bytearray(res)
-    for i in range(50):
-        print(masque[i],message[i],res[i],chr(res[i]))
+    for i in range(size,len(masque)-size,size):
+        print("")
+        res = strxor(message,masque[i:i+size])
+        try:
+            print(res.decode())
+            print(res)
+        except:
+            print(i," ",end=" ")
+
+    # res = strxor(message, masque[size:2*size])
+    # print(res.decode())
+    # print(res)
+    # res = bytearray(res)
+    # for i in range(50):
+    #     print(masque[i],message[i],res[i],chr(res[i]))
     #
+    # test = []
+    # index = 0
+    # for l in range(0,i*j,j):
+    #     print(l)
+    #     print(masque[l],struct.pack(">B",masque[l]))
+    #     print(message[index],struct.pack(">B",message[index]))
+    #     test = strxor(struct.pack(">B",masque[l]),struct.pack(">B",message[index]))
+    #     print(masque[l], message[index],test)
+    #     index+=1
+
     # reader = open("ctr-1", "rb")
     # message1 = reader.readline()
     # reader.close()
