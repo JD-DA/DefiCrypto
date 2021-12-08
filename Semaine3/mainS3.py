@@ -26,12 +26,11 @@ if __name__ == "__main__":
         imageRed = numpydata[:, :, component]
         Image.fromarray(imageRed).save(f"./image{component}.png")'''
     imageRed = numpydata[:, :, 0]
-    imageRed[0,1]=254
     print("Avant")
     print(imageRed)
     print(imageRed.shape)
 # on inverse l'image sur la diagonale pour pouvoir lire les colonnes une par une au lieu des lignes une par une
-    imageRed = np.reshape(imageRed,(1500, 1154), order='F')
+    #imageRed = np.reshape(imageRed,(1500, 1154), order='F')
     print("apres")
     print(imageRed)
     print(imageRed.shape)
@@ -49,8 +48,10 @@ if __name__ == "__main__":
     size = len(message)
     print(size,len(masque))
     res = strxor(message, masque[:size])
-    #print(res.decode())
-    print(res)
+    print(res.decode())
+
+
+    """print(res)
     for i in range(size,len(masque)-size,size):
         print("")
         res = strxor(message,masque[i:i+size])
@@ -59,7 +60,7 @@ if __name__ == "__main__":
             print(res)
         except:
             print(i," ",end=" ")
-
+"""
     # res = strxor(message, masque[size:2*size])
     # print(res.decode())
     # print(res)
